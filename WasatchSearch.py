@@ -15,7 +15,7 @@ prop_address_field = browser.find_element_by_css_selector('input[name="dnn$ctr12
 print(prop_address_field.get_attribute('id'))
 
 # Enter addresses
-prop_address_field.send_keys('8686 E STRAWBERRY') # using an example property here
+prop_address_field.send_keys('8686 E STRAWBERRY')  # using an example property here
 # prop_address_field.send_keys(street_name)
 
 # Click on the Submit Button
@@ -25,6 +25,10 @@ ActionChains(browser).click(search_button).perform()
 
 #Works up until here
 
-account_row = browser.find_element_by_css_selector('input[id="dnn_ctr1237_DynamicViews_dlReport"]')
+#account_row = browser.find_element_by_link_text("View Details")
+account_row = browser.find_element_by_link_text("View Details")
+#account_row = browser.findElement(By.xpath('//*[@id="dnn_ctr1237_DynamicViews_dlReport"]/tbody/tr[2]/td[1]/p/a'));
+#account_row = browser.find_element_by_css_selector('input.dnn_ctr1237_DynamicViews_dlReport')
 #print(account_row.get_attribute('innerHTML'))
 ActionChains(browser).click(account_row).perform()
+
