@@ -1,6 +1,7 @@
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver import ActionChains
+import time
 
 # def scrapeWasatch(street_num, street_name):
 
@@ -23,12 +24,9 @@ search_button = browser.find_element_by_css_selector('input[name="dnn$ctr1237$Dy
 print(prop_address_field.get_attribute('name'))
 ActionChains(browser).click(search_button).perform()
 
-#Works up until here
+time.sleep(5)
 
-#account_row = browser.find_element_by_link_text("View Details")
-account_row = browser.find_element_by_link_text("View Details")
-#account_row = browser.findElement(By.xpath('//*[@id="dnn_ctr1237_DynamicViews_dlReport"]/tbody/tr[2]/td[1]/p/a'));
-#account_row = browser.find_element_by_css_selector('input.dnn_ctr1237_DynamicViews_dlReport')
-#print(account_row.get_attribute('innerHTML'))
+account_row = browser.find_element_by_css_selector('table#dnn_ctr1237_DynamicViews_dlReport tbody tr td p a')
+print(account_row)
 ActionChains(browser).click(account_row).perform()
 
